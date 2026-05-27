@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Raqamli Soat</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+        #clock {
+            font-size: 60px;
+            font-weight: bold;
+            padding: 20px 40px;
+            border: 3px solid #61dafb;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #61dafb;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">00:00:00</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('uz-UZ');
+            document.getElementById('clock').textContent = time;
+        }
+        setInterval(updateClock, 1000); // Har soniyada yangilash
+        updateClock();
+    </script>
+</body>
+</html>
